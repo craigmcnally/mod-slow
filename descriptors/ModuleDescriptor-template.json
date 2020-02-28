@@ -1,0 +1,37 @@
+{
+  "id": "${artifactId}-${version}",
+  "name": "Slow request simulation module",
+  "provides": [
+    {
+      "id": "slow",
+      "version": "1.0",
+      "handlers": [
+
+      ]
+    },
+    {
+      "id": "_tenant",
+      "version": "1.2",
+      "interfaceType": "system",
+      "handlers": [
+        {
+          "methods": [ "POST", "DELETE" ],
+          "pathPattern": "/_/tenant"
+        }
+      ]
+    }
+  ],
+  "requires": [
+
+  ],
+  "permissionSets": [
+
+  ],
+  "launchDescriptor": {
+    "dockerImage": "${artifactId}:${version}",
+    "dockerArgs": {
+      "HostConfig": { "PortBindings": { "8081/tcp":  [{ "HostPort": "%p" }] } }
+    },
+    "dockerPull" : false
+  }
+}
