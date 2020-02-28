@@ -2,11 +2,11 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
 const port = 8082
+const defaultDelay = process.env.DELAY
 
 async function doDelay(ms) {
-  if(ms) {
-    await new Promise(r => setTimeout(r, ms))
-  } 
+  let delay = ms || defaultDelay || 0
+  await new Promise(r => setTimeout(r, delay))
 }
 
 async function handleGet(req, res) {
