@@ -34,4 +34,5 @@ app.use(bodyParser.json({type: 'application/json'}))
 app.post('/_/tenant', (req, res) => handlePostTenant(req, res))
 app.get('/admin/health', (req, res) => handleGetAdminHealth(req, res))
 
-app.listen(port, () => console.log(`mod-slow listening on port ${port}!`))
+const server = app.listen(port, () => console.log(`mod-slow listening on port ${port}!`))
+server.timeout = 99999999
