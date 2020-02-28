@@ -1,0 +1,15 @@
+{
+  "name": "@folio-hosting/mod-slow",
+  "version": "1.0.{BUILD}",
+  "description": "module to simlulate slow requests for test purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  },
+  "license": "ISC"
+}
