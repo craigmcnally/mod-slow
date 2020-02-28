@@ -1,5 +1,5 @@
 {
-  "id": "${artifactId}-${version}",
+  "id": "mod-slow-1.0.0",
   "name": "Slow request simulation module",
   "provides": [
     {
@@ -28,7 +28,7 @@
 
   ],
   "launchDescriptor": {
-    "dockerImage": "${artifactId}:${version}",
+    "dockerImage": "mod-slow:1.0.0",
     "dockerArgs": {
       "HostConfig": { "PortBindings": { "8081/tcp":  [{ "HostPort": "%p" }] } }
     },
